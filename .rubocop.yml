@@ -1,0 +1,71 @@
+@@ -1,61 +1,63 @@
+---
+inherit_from: .rubocop_todo.yml
+require:
+  - rubocop-performance
+  - ./rubocop/jekyll
+Jekyll/NoPutsAllowed:
+  Exclude:
+    - rake/*.rake
+AllCops:
+  TargetRubyVersion: 2.4
+  Include:
+    - lib/**/*.rb
+    - test/**/*.rb
+  Exclude:
+    - bin/**/*
+    - exe/**/*
+    - benchmark/**/*
+    - script/**/*
+    - vendor/**/*
+    - tmp/**/*
+Layout/EmptyComment:
+  Enabled: false
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+Layout/EndAlignment:
+  Severity: error
+Layout/HashAlignment:
+  EnforcedHashRocketStyle: table
+Layout/IndentationWidth:
+  Severity: error
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+Layout/LineLength:
+  Exclude:
+    - !ruby/regexp /features\/.*.rb/
+    - Rakefile
+    - rake/*.rake
+    - Gemfile
+  Max: 100
+  Severity: warning
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+Lint/NestedPercentLiteral:
+  Exclude:
+    - test/test_site.rb
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+Lint/MixedRegexpCaptureTypes:
+  Enabled: false
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+@@ -169,6 +171,10 @@ Style/PercentLiteralDelimiters:
+    "%w": "()"
+    "%W": "()"
+    "%x": "()"
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+Style/RedundantRegexpEscape:
+  Enabled: true
+Style/RegexpLiteral:
+  EnforcedStyle: percent_r
+Style/RescueModifier:
+remote_theme : mmistakes/minimal-mistakes
